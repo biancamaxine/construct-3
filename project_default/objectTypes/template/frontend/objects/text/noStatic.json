@@ -1,0 +1,24 @@
+{
+	"name": "noStatic",
+	"plugin-id": "Text",
+	"sid": 174701280741211,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 401585367886096
+		},
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 449643439859250
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

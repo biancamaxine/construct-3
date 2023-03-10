@@ -1,0 +1,431 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 33300,
+	"name": "template_default",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "4lrszrg12ez",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"LOAD_BAR",
+					"BACKGROUND_INTRO",
+					"TXT_INTRO",
+					"KonectarmeText",
+					"Innyx",
+					"Konectarme"
+				],
+				"subfolders": [],
+				"name": "INNYX_DEFAULT"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"bgSprite",
+									"bgPattern"
+								],
+								"subfolders": [],
+								"name": "background"
+							},
+							{
+								"items": [],
+								"subfolders": [
+									{
+										"items": [
+											"noStatic",
+											"static"
+										],
+										"subfolders": [],
+										"name": "text"
+									}
+								],
+								"name": "objects"
+							},
+							{
+								"items": [
+									"margin"
+								],
+								"subfolders": [
+									{
+										"items": [
+											"direction",
+											"home",
+											"info",
+											"musicSwitch",
+											"play"
+										],
+										"subfolders": [],
+										"name": "buttons"
+									}
+								],
+								"name": "hud"
+							}
+						],
+						"name": "frontend"
+					},
+					{
+						"items": [
+							"audioManager"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"audio",
+									"keyboard",
+									"touch"
+								],
+								"subfolders": [],
+								"name": "eventListeners"
+							}
+						],
+						"name": "backend"
+					}
+				],
+				"name": "template"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"menu",
+					"game",
+					"finish"
+				],
+				"subfolders": [],
+				"name": "game"
+			},
+			{
+				"items": [
+					"index",
+					"play",
+					"tutorial"
+				],
+				"subfolders": [],
+				"name": "default"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"default",
+			"eventGame"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 706634756346550,
+					"script-info": {
+						"purpose": "main"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "ImportForEvents.js",
+							"type": "application/javascript",
+							"sid": 865278309947227,
+							"script-info": {
+								"purpose": "imports-for-events"
+							}
+						}
+					],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "InGame.js",
+									"type": "application/javascript",
+									"sid": 675402106048669,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "OutGame.js",
+									"type": "application/javascript",
+									"sid": 155714576399256,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "views"
+						},
+						{
+							"items": [
+								{
+									"name": "Service.js",
+									"type": "application/javascript",
+									"sid": 686598857339476,
+									"script-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "DataBase.js",
+									"type": "application/javascript",
+									"sid": 784425791860534,
+									"script-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "services"
+						}
+					],
+					"name": "src"
+				}
+			]
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "FredokaOne-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 448870451783060,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "KdamThmorPro-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 829140537467443,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "PatrickHand-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 120410219888317,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "PressStart2P-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 392671457566348,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "SignikaNegative-Medium.ttf",
+					"type": "application/font-sfnt",
+					"sid": 853844726734193,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-33.png",
+					"type": "image/png",
+					"sid": 975621738897507,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "icon-65.png",
+					"type": "image/png",
+					"sid": 989166905666797,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "icon-257.png",
+					"type": "image/png",
+					"sid": 427235553143558,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "icon-513.png",
+					"type": "image/png",
+					"sid": 740553116478623,
+					"icon-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "loading-logo2.png",
+					"type": "image/png",
+					"sid": 301928659778725,
+					"icon-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Linha do tempo 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": true,
+		"exportFileStructure": "flat"
+	},
+	"viewportWidth": 1080,
+	"viewportHeight": 720,
+	"firstLayout": "index"
+}

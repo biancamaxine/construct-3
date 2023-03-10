@@ -1,0 +1,80 @@
+{
+	"name": "KonectarmeText",
+	"plugin-id": "Sprite",
+	"sid": 257163559190756,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 720,
+						"height": 180,
+						"originX": 0.5,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8495165,
+						"collisionPoly": {
+							"points": [
+								0.09027777777777778,
+								0.35911602209944754,
+								0.5,
+								0.4198895027624309,
+								0.9263888888888889,
+								0.287292817679558,
+								0.9486111111111111,
+								0.5,
+								0.9263888888888889,
+								0.7071823204419889,
+								0.5,
+								0.6519337016574586,
+								0.09444444444444444,
+								0.6187845303867403,
+								0.05,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 502371321213166,
+				"name": "COLOR",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 720,
+						"height": 108,
+						"originX": 0.5,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1035277,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 269749340208887,
+				"name": "WHITE",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

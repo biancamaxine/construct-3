@@ -1,0 +1,37 @@
+{
+	"name": "margin",
+	"plugin-id": "Sprite",
+	"sid": 587444308654986,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1080,
+						"height": 720,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9576771,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 541039564072122,
+				"name": "DEFAULT",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

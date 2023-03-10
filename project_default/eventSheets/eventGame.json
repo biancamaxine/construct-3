@@ -1,0 +1,487 @@
+{
+	"name": "eventGame",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "musicEnabled",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 545032339666997
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "System Defaults",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 703718618150295
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "js = new ImportForEvents(runtime);\njs.onStartLayout();"
+						}
+					],
+					"sid": 860707928811540
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 771147079855907
+						}
+					],
+					"actions": [],
+					"sid": 333818375607371
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Music Controller",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "touch",
+									"sid": 963075392155914,
+									"parameters": {
+										"object": "musicSwitch"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 260484642058542,
+									"parameters": {
+										"variable": "musicEnabled"
+									}
+								}
+							],
+							"sid": 540938776948101
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 971458619494723,
+									"parameters": {
+										"variable": "musicEnabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-volume",
+									"objectClass": "audio",
+									"sid": 583281840009716,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "-10"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "musicSwitch",
+									"sid": 908700910957317,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 439635052147022
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 330328704150352
+								}
+							],
+							"actions": [
+								{
+									"id": "set-volume",
+									"objectClass": "audio",
+									"sid": 847538886296604,
+									"parameters": {
+										"tag": "\"music\"",
+										"db": "-300"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "musicSwitch",
+									"sid": 741143917406438,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 377035048984232
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Audio Manager",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "audioManager",
+											"sid": 605136926247929,
+											"parameters": {
+												"instance-variable": "onPlay"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "audioManager",
+											"sid": 288648551863651,
+											"parameters": {
+												"instance-variable": "onPlay",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 355284770268348,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "audioManager",
+													"sid": 799824753986478,
+													"parameters": {
+														"instance-variable": "folder",
+														"comparison": 0,
+														"value": "\"Sounds\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 861126671884545,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "audioManager",
+															"sid": 213713700038965,
+															"parameters": {
+																"instance-variable": "looping"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "audio",
+															"sid": 154504514895041,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "audioManager.name",
+																"loop": "looping",
+																"volume": "audioManager.volume",
+																"stereo-pan": "0",
+																"tag-optional": "audioManager.tag"
+															}
+														}
+													],
+													"sid": 650169359135258
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 352819172800999
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "audio",
+															"sid": 905128874294101,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "audioManager.name",
+																"loop": "not-looping",
+																"volume": "audioManager.volume",
+																"stereo-pan": "0",
+																"tag-optional": "audioManager.tag"
+															}
+														}
+													],
+													"sid": 164665323945029
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "audioManager",
+													"sid": 340148957351052,
+													"parameters": {
+														"instance-variable": "folder",
+														"comparison": 0,
+														"value": "\"Music\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 363210718425715,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "audioManager",
+															"sid": 628108408439699,
+															"parameters": {
+																"instance-variable": "looping"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "audio",
+															"sid": 977150027179885,
+															"parameters": {
+																"folder": "music",
+																"audio-file-name": "audioManager.name",
+																"loop": "looping",
+																"volume": "audioManager.volume",
+																"stereo-pan": "0",
+																"tag-optional": "audioManager.tag"
+															}
+														}
+													],
+													"sid": 248257357270363
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 190826379049782
+														}
+													],
+													"actions": [
+														{
+															"id": "play-by-name",
+															"objectClass": "audio",
+															"sid": 635020042243963,
+															"parameters": {
+																"folder": "music",
+																"audio-file-name": "audioManager.name",
+																"loop": "not-looping",
+																"volume": "audioManager.volume",
+																"stereo-pan": "0",
+																"tag-optional": "audioManager.tag"
+															}
+														}
+													],
+													"sid": 743787372169558
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "audioManager",
+											"sid": 690400814965705,
+											"parameters": {
+												"instance-variable": "onPause"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "audioManager",
+											"sid": 758709395180922,
+											"parameters": {
+												"instance-variable": "onPause",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-paused",
+											"objectClass": "audio",
+											"sid": 232402227990574,
+											"parameters": {
+												"tag": "audioManager.tag",
+												"state": "pause"
+											}
+										}
+									],
+									"sid": 276217998405358
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "audioManager",
+											"sid": 470307438763120,
+											"parameters": {
+												"instance-variable": "onResume"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "audioManager",
+											"sid": 158735050019973,
+											"parameters": {
+												"instance-variable": "onResume",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-paused",
+											"objectClass": "audio",
+											"sid": 350435368946764,
+											"parameters": {
+												"tag": "audioManager.tag",
+												"state": "resume"
+											}
+										}
+									],
+									"sid": 305317820842114
+								}
+							],
+							"sid": 194428837788099
+						}
+					],
+					"sid": 274056384819755
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Default Buttons",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "touch",
+									"sid": 855346024675710,
+									"parameters": {
+										"object": "play"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 584712516608370,
+									"parameters": {
+										"layout": "menu"
+									}
+								}
+							],
+							"sid": 973076193339358
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "touch",
+									"sid": 493910274243463,
+									"parameters": {
+										"object": "info"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 877186530639560,
+									"parameters": {
+										"layout": "tutorial"
+									}
+								}
+							],
+							"sid": 460139352201511
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "touch",
+									"sid": 944468774605171,
+									"parameters": {
+										"object": "home"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 209015404022884,
+									"parameters": {
+										"layout": "play"
+									}
+								}
+							],
+							"sid": 801750930011484
+						}
+					],
+					"sid": 670524316505406
+				}
+			],
+			"sid": 647937194068546
+		}
+	],
+	"sid": 301233690862630
+}

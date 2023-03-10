@@ -1,0 +1,132 @@
+{
+	"name": "default",
+	"events": [
+		{
+			"functionName": "START_GAME",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "layout",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 927671213575079
+				},
+				{
+					"name": "time_out",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 999221390885363
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 207686576159582,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 793358839971511
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "DEFINIÇÃO DE LAYOUT\n\n0 - Ciências Humanas e Sociais Aplicadas - HISTORIA, GEOGRAIA, SOCIOLOGIA E FILOSOFIA\nCIÊNCIAS HUMANAS E SOCIAIS APLICADAS  -  ENSINO MÉDIO\n\n1 - Ciências da natureza- QUÍMICA, BIOLOGIA, FÍSICA\nCIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS - ENSINO MÉDIO\n\n2 - Matemática e suas tecnologias - MATEMÁTICA\nMATEMÁTICA E SUAS TECNOLOGIAS - ENSINO MÉDIO\n\n3 - Linguagens e suas tecnologias - PORTUGUES\nLINGUAGENS E SUAS TECNOLIGIAS - ENSINO MÉDIO\n\n4 - Línguas Estrangeiras - INGLES, ESPANHOL\nLÍNGUAS ESTRANGEIRAS\n\n5 - Redação - REDAÇÃO\nREDAÇÃO"
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "BACKGROUND_INTRO",
+							"sid": 430841821556418,
+							"parameters": {
+								"frame-number": "layout"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 534366155796037,
+							"parameters": {
+								"seconds": "time_out"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 155387559359898,
+							"parameters": {
+								"layout": "play"
+							}
+						}
+					],
+					"sid": 638389696268806
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "LOAD_BAR",
+							"sid": 467985839151703,
+							"parameters": {
+								"width": "lerp(Self.Width, 1*LOAD_BAR.Width + 10, dt*30)"
+							}
+						}
+					],
+					"sid": 237724081860201
+				}
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "debug",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 555383593625958
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 579818159543616
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 846401928812930,
+					"parameters": {
+						"variable": "debug",
+						"value": "false"
+					}
+				},
+				{
+					"callFunction": "START_GAME",
+					"sid": 891049240300833,
+					"parameters": [
+						"3",
+						"3"
+					]
+				}
+			],
+			"sid": 498470007878222
+		}
+	],
+	"sid": 670025047333622
+}
